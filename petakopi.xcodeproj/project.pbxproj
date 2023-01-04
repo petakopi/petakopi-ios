@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		872ECE462965035200617A4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872ECE452965035200617A4B /* AppDelegate.swift */; };
 		872ECE482965035200617A4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872ECE472965035200617A4B /* SceneDelegate.swift */; };
-		872ECE4A2965035200617A4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872ECE492965035200617A4B /* ViewController.swift */; };
-		872ECE4D2965035200617A4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 872ECE4B2965035200617A4B /* Main.storyboard */; };
 		872ECE4F2965035300617A4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 872ECE4E2965035300617A4B /* Assets.xcassets */; };
 		872ECE522965035300617A4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 872ECE502965035300617A4B /* LaunchScreen.storyboard */; };
 		872ECE5D2965035300617A4B /* petakopiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872ECE5C2965035300617A4B /* petakopiTests.swift */; };
@@ -40,8 +38,6 @@
 		872ECE422965035100617A4B /* petakopi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = petakopi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		872ECE452965035200617A4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		872ECE472965035200617A4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		872ECE492965035200617A4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		872ECE4C2965035200617A4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		872ECE4E2965035300617A4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		872ECE512965035300617A4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		872ECE532965035300617A4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,8 +99,6 @@
 			children = (
 				872ECE452965035200617A4B /* AppDelegate.swift */,
 				872ECE472965035200617A4B /* SceneDelegate.swift */,
-				872ECE492965035200617A4B /* ViewController.swift */,
-				872ECE4B2965035200617A4B /* Main.storyboard */,
 				872ECE4E2965035300617A4B /* Assets.xcassets */,
 				872ECE502965035300617A4B /* LaunchScreen.storyboard */,
 				872ECE532965035300617A4B /* Info.plist */,
@@ -242,7 +236,6 @@
 			files = (
 				872ECE522965035300617A4B /* LaunchScreen.storyboard in Resources */,
 				872ECE4F2965035300617A4B /* Assets.xcassets in Resources */,
-				872ECE4D2965035200617A4B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +280,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				872ECE4A2965035200617A4B /* ViewController.swift in Sources */,
 				872ECE462965035200617A4B /* AppDelegate.swift in Sources */,
 				872ECE482965035200617A4B /* SceneDelegate.swift in Sources */,
 			);
@@ -326,14 +318,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		872ECE4B2965035200617A4B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				872ECE4C2965035200617A4B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		872ECE502965035300617A4B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -471,7 +455,7 @@
 				INFOPLIST_FILE = petakopi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -499,7 +483,7 @@
 				INFOPLIST_FILE = petakopi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
