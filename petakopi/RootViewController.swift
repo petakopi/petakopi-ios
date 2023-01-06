@@ -28,9 +28,8 @@ class RootViewController: UITabBarController {
             let vc = ViewControllerVendor.viewController(for: tab.url)
             viewControllers
                 .append(RoutingController(rootViewController: vc))
-
         }
-        
+
         self.viewControllers = viewControllers
     }
 
@@ -43,7 +42,7 @@ extension RootViewController {
 
     static let tabs = [
         Tab(url: Api.rootURL!, icon: "house.fill", titleKey: "Shops"),
-        Tab(url: Api.rootURL!, icon: "map.fill", titleKey: "Map"),
+        Tab(url: Api.Path.map!, icon: "map.fill", titleKey: "Map"),
     ]
 
     struct Tab {

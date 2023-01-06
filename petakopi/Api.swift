@@ -13,4 +13,8 @@ struct Api {
 #else
     static let rootURL = URL(string: "https://petakopi.my")
 #endif
+    
+    struct Path {
+        static let map = Api.rootURL?.appendingPathComponent("map")
+    }
 }
