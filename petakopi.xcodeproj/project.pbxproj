@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		871491BC296835080075D4AE /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871491BB296835080075D4AE /* Api.swift */; };
 		871491BE296838010075D4AE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871491BD296838010075D4AE /* RootViewController.swift */; };
+		871491C029686DFB0075D4AE /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871491BF29686DFB0075D4AE /* BaseNavigationController.swift */; };
+		871491C429686ED70075D4AE /* path_configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 871491C329686ED70075D4AE /* path_configuration.json */; };
+		871491C629686F010075D4AE /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871491C529686F010075D4AE /* Global.swift */; };
+		871491C82968700A0075D4AE /* RoutingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871491C72968700A0075D4AE /* RoutingController.swift */; };
+		871491CA296871150075D4AE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871491C9296871150075D4AE /* WebViewController.swift */; };
+		871491CC296871CC0075D4AE /* ViewControllerVendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871491CB296871CC0075D4AE /* ViewControllerVendor.swift */; };
 		872ECE462965035200617A4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872ECE452965035200617A4B /* AppDelegate.swift */; };
 		872ECE482965035200617A4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872ECE472965035200617A4B /* SceneDelegate.swift */; };
 		872ECE4F2965035300617A4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 872ECE4E2965035300617A4B /* Assets.xcassets */; };
@@ -39,6 +45,12 @@
 /* Begin PBXFileReference section */
 		871491BB296835080075D4AE /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		871491BD296838010075D4AE /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		871491BF29686DFB0075D4AE /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		871491C329686ED70075D4AE /* path_configuration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = path_configuration.json; sourceTree = "<group>"; };
+		871491C529686F010075D4AE /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		871491C72968700A0075D4AE /* RoutingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingController.swift; sourceTree = "<group>"; };
+		871491C9296871150075D4AE /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		871491CB296871CC0075D4AE /* ViewControllerVendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerVendor.swift; sourceTree = "<group>"; };
 		872ECE422965035100617A4B /* petakopi.my.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = petakopi.my.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		872ECE452965035200617A4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		872ECE472965035200617A4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,9 +117,15 @@
 				871491BB296835080075D4AE /* Api.swift */,
 				871491BD296838010075D4AE /* RootViewController.swift */,
 				872ECE472965035200617A4B /* SceneDelegate.swift */,
+				871491BF29686DFB0075D4AE /* BaseNavigationController.swift */,
 				872ECE4E2965035300617A4B /* Assets.xcassets */,
 				872ECE502965035300617A4B /* LaunchScreen.storyboard */,
 				872ECE532965035300617A4B /* Info.plist */,
+				871491C329686ED70075D4AE /* path_configuration.json */,
+				871491C529686F010075D4AE /* Global.swift */,
+				871491C72968700A0075D4AE /* RoutingController.swift */,
+				871491C9296871150075D4AE /* WebViewController.swift */,
+				871491CB296871CC0075D4AE /* ViewControllerVendor.swift */,
 			);
 			path = petakopi;
 			sourceTree = "<group>";
@@ -241,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				872ECE522965035300617A4B /* LaunchScreen.storyboard in Resources */,
+				871491C429686ED70075D4AE /* path_configuration.json in Resources */,
 				872ECE4F2965035300617A4B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,9 +307,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				871491BC296835080075D4AE /* Api.swift in Sources */,
+				871491C82968700A0075D4AE /* RoutingController.swift in Sources */,
+				871491CC296871CC0075D4AE /* ViewControllerVendor.swift in Sources */,
 				872ECE462965035200617A4B /* AppDelegate.swift in Sources */,
 				871491BE296838010075D4AE /* RootViewController.swift in Sources */,
+				871491C029686DFB0075D4AE /* BaseNavigationController.swift in Sources */,
 				872ECE482965035200617A4B /* SceneDelegate.swift in Sources */,
+				871491C629686F010075D4AE /* Global.swift in Sources */,
+				871491CA296871150075D4AE /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

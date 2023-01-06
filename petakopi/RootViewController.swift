@@ -23,15 +23,14 @@ class RootViewController: UITabBarController {
 
     private func setUp() {
         var viewControllers = [UIViewController]()
+
         Self.tabs.forEach { tab in
-            let vc = UIViewController()
-            vc.tabBarItem = UITabBarItem(
-                title: NSLocalizedString(tab.titleKey, comment: ""),
-                image: UIImage(systemName: tab.icon),
-                selectedImage: nil
-            )
-            viewControllers.append(vc)
+            let vc = ViewControllerVendor.viewController(for: tab.url)
+            viewControllers
+                .append(RoutingController(rootViewController: vc))
+
         }
+        
         self.viewControllers = viewControllers
     }
 
