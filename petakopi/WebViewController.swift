@@ -7,6 +7,7 @@
 
 import Foundation
 import Turbo
+import UIKit
 
 class WebViewController: VisitableViewController {
 
@@ -17,11 +18,11 @@ class WebViewController: VisitableViewController {
 
     private func configureDismissButton() {
         if presentingViewController != nil {
-//            navigationItem.rightBarButtonItem = UIBarButtonItem(
-//                barButtonSystemItem: .close,
-//                target: self,
-//                action: #selector(dismissModal)
-//            )
+            navigationItem.rightBarButtonItem = UIBarButtonItem(
+                barButtonSystemItem: .close,
+                target: self,
+                action: #selector(dismissModal)
+            )
         }
     }
 
