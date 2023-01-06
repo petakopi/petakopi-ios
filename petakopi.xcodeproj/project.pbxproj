@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		871491BC296835080075D4AE /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871491BB296835080075D4AE /* Api.swift */; };
+		871491BE296838010075D4AE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871491BD296838010075D4AE /* RootViewController.swift */; };
 		872ECE462965035200617A4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872ECE452965035200617A4B /* AppDelegate.swift */; };
 		872ECE482965035200617A4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872ECE472965035200617A4B /* SceneDelegate.swift */; };
 		872ECE4F2965035300617A4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 872ECE4E2965035300617A4B /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		871491BB296835080075D4AE /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		871491BD296838010075D4AE /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		872ECE422965035100617A4B /* petakopi.my.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = petakopi.my.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		872ECE452965035200617A4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		872ECE472965035200617A4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				872ECE452965035200617A4B /* AppDelegate.swift */,
+				871491BB296835080075D4AE /* Api.swift */,
+				871491BD296838010075D4AE /* RootViewController.swift */,
 				872ECE472965035200617A4B /* SceneDelegate.swift */,
 				872ECE4E2965035300617A4B /* Assets.xcassets */,
 				872ECE502965035300617A4B /* LaunchScreen.storyboard */,
@@ -281,7 +287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				871491BC296835080075D4AE /* Api.swift in Sources */,
 				872ECE462965035200617A4B /* AppDelegate.swift in Sources */,
+				871491BE296838010075D4AE /* RootViewController.swift in Sources */,
 				872ECE482965035200617A4B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
