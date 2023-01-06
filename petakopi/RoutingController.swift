@@ -12,7 +12,12 @@ import WebKit
 
 class RoutingController: BaseNavigationController {
 
+    private enum PresentationType: String {
+        case advance, replace, modal
+    }
+
     private static var sharedProcessPool = WKProcessPool()
+    private static let modalSession = createSession()
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -46,17 +51,77 @@ class RoutingController: BaseNavigationController {
 extension RoutingController: SessionDelegate {
     func session(_ session: Session,
                  didProposeVisit proposal: VisitProposal) {
-        let vc = ViewControllerVendor.viewController(
-            for: proposal.url,
-            properties: proposal.properties
-        )
-        pushViewController(vc, animated: true)
-        if let vc = vc as? Visitable { session.visit(vc) }
+
+        visit(proposal)
     }
 
     func session(_ session: Session,
                  didFailRequestForVisitable visitable: Visitable,
                  error: Error) {}
 
+    func visit(_ proposal: VisitProposal) {
+        // Step 1: Create the view controller
+        let viewController = ViewControllerVendor.viewController(
+            for: proposal.url,
+            properties: proposal.properties
+        )
+
+        let presentation =
+        proposal.properties["presentation"] as? String ?? "advance"
+
+        let presentationType =
+            PresentationType(rawValue: presentation)
+
+        // Step 2: Present the view controller
+        navigateTo(viewController, using: presentationType!)
+
+        // Step 3: Navigate the session to the new view controller
+        visit(
+            viewController,
+            options: proposal.options,
+            presentationType: presentationType!
+        )
+    }
+
     func sessionWebViewProcessDidTerminate(_ session: Session) {}
+
+    private func navigateTo(_ vc: UIViewController,
+                            using presentationType: PresentationType) {
+        switch presentationType {
+        case .advance:
+            presentedViewController?.dismiss(animated: true)
+            pushViewController(vc, animated: true)
+        case .replace:
+            presentedViewController?.dismiss(animated: true)
+            let viewControllers =
+            Array(viewControllers.dropLast()) + [vc]
+            setViewControllers(viewControllers, animated: true)
+
+        case .modal:
+            let modalNavController =
+            BaseNavigationController(rootViewController: vc)
+            if let presentedViewController = presentedViewController {
+                presentedViewController.dismiss(
+                    animated: true, completion: { [unowned self] in
+                        self.present(modalNavController, animated: true) })
+            } else {
+                present(modalNavController, animated: true)
+            }
+        }
+    }
+
+    private func visit(_ vc: UIViewController,
+                       options: VisitOptions,
+                       presentationType: PresentationType) {
+        guard let visitable = vc as? Visitable else { return }
+
+        switch presentationType {
+        case .advance, .replace:
+            Self.modalSession.delegate = nil
+            session.visit(visitable, options: options)
+        case .modal:
+            Self.modalSession.delegate = self
+            Self.modalSession.visit(visitable, options: options)
+        }
+    }
 }
