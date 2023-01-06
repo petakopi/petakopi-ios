@@ -45,7 +45,14 @@ class RoutingController: BaseNavigationController {
 
 extension RoutingController: SessionDelegate {
     func session(_ session: Session,
-                 didProposeVisit proposal: VisitProposal) {}
+                 didProposeVisit proposal: VisitProposal) {
+        let vc = ViewControllerVendor.viewController(
+            for: proposal.url,
+            properties: proposal.properties
+        )
+        pushViewController(vc, animated: true)
+        if let vc = vc as? Visitable { session.visit(vc) }
+    }
 
     func session(_ session: Session,
                  didFailRequestForVisitable visitable: Visitable,
