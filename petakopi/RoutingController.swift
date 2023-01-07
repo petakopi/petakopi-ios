@@ -51,13 +51,29 @@ class RoutingController: BaseNavigationController {
 extension RoutingController: SessionDelegate {
     func session(_ session: Session,
                  didProposeVisit proposal: VisitProposal) {
-
         visit(proposal)
     }
 
     func session(_ session: Session,
                  didFailRequestForVisitable visitable: Visitable,
-                 error: Error) {}
+                 error: Error) {
+        if let turboError = error as? TurboError, turboError == .http(statusCode: 401) {
+            showLoginScreen()
+        } else {
+            let alert = UIAlertController(
+                title: NSLocalizedString("error.title", comment: ""),
+                message: error.localizedDescription,
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(
+                title: NSLocalizedString("error.ok", comment: ""), style: .default,
+                handler: nil
+            ))
+
+            presentedViewController?.dismiss(animated: true)
+            present(alert, animated: true)
+        }
+    }
 
     func visit(_ proposal: VisitProposal) {
         // Step 1: Create the view controller
@@ -123,5 +139,19 @@ extension RoutingController: SessionDelegate {
             Self.modalSession.delegate = self
             Self.modalSession.visit(visitable, options: options)
         }
+    }
+
+    private func showLoginScreen() {
+        let properties = Global.pathConfiguration.properties(for: Api.Path.signIn!)
+
+        print(properties)
+
+        let proposal = VisitProposal(
+            url: Api.Path.signIn!,
+            options: VisitOptions(),
+            properties: properties
+        )
+
+        visit(proposal)
     }
 }

@@ -16,5 +16,6 @@ struct Api {
     
     struct Path {
         static let map = Api.rootURL?.appendingPathComponent("map")
+        static let signIn = Api.rootURL?.appendingPathComponent("users/sign_in")
     }
 }
