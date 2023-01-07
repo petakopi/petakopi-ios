@@ -28,7 +28,7 @@ class WebViewController: VisitableViewController {
 
 
    override func visitableDidRender() {
-       navigationItem.title = visitableView.webView?.title
+       navigationItem.title = "petakopi.my"
    }
 
     @objc func dismissModal() {

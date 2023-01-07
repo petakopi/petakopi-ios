@@ -16,10 +16,8 @@ class BaseNavigationController: UINavigationController {
 
     private func configureNavigationBar() {
         let navigationBarAppearance = UINavigationBarAppearance()
+        
         navigationBarAppearance.configureWithOpaqueBackground()
-
-
-        navigationBar.prefersLargeTitles = true
         navigationBar.standardAppearance = navigationBarAppearance
         navigationBar.compactAppearance = navigationBarAppearance
         navigationBar.scrollEdgeAppearance = navigationBarAppearance
