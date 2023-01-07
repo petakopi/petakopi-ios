@@ -10,7 +10,8 @@ import Turbo
 import SafariServices
 import WebKit
 
-class RoutingController: BaseNavigationController {
+class RoutingController:
+    BaseNavigationController, PathDirectable {
 
     private enum PresentationType: String {
         case advance, replace, modal
@@ -51,7 +52,11 @@ class RoutingController: BaseNavigationController {
 extension RoutingController: SessionDelegate {
     func session(_ session: Session,
                  didProposeVisit proposal: VisitProposal) {
-        visit(proposal)
+        if proposal.isPathDirective {
+            executePathDirective(proposal)
+        } else {
+            visit(proposal)
+        }
     }
 
     func session(_ session: Session,
